@@ -23,7 +23,7 @@ Bonus: Support retrieving the information given a partial/fuzzy country code/nam
 # Airport Service Application
 
 ## Database
-Used mysql as DB, you can find the db script under /db/airportchallenge.sql to build the db;
+Used mysql as DB, you can find the db script under /databgase/database.sql to build the db;
 
 ## Services
 This application is build to meet the following cases:
