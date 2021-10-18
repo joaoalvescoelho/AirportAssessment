@@ -33,6 +33,6 @@ This application is build to meet the following cases:
 ## How to run
 You can run the application by launching the springboot.
 After, the application should be available.
-http://localhost:8080/index.html returns the index page from where you can access two other pages.
-http://localhost:8080/country returns the page to search for airports in different countries.
-http://localhost:8080/airport returns the page with the list of top 10 countries with most airports.
+- http://localhost:8080/index.html returns the index page from where you can access two other pages.
+- http://localhost:8080/country returns the page to search for airports in different countries.
+- http://localhost:8080/airport returns the page with the list of top 10 countries with most airports.
