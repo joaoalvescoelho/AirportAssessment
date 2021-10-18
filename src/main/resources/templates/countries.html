@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Country Airports</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<form action="/country" method="get">
+  <label>
+    Country name or code:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Search" />
+</form>
+<form>
+  <input type="button" value="Go back" onclick="history.back()">
+</form>
+<div id="country" th:if="${country != null}">
+  Found the country: <b th:text="${country.name}"></b>
+  <h2>List of Airports</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Municipality</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="airport : ${country.airports}">
+      <tr>
+        <td th:text="${airport.name}"></td>
+        <td th:text="${airport.municipality}"></td>
+      </tr>
+    </th:block>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

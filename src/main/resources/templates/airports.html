@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1>Top 10 countries with most airports:</h1>
+<div id="top-report">
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>Country</th>
+        <th>Count</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="top : ${reportHighestAirports.top}">
+        <tr>
+          <td th:text="${top.name}"></td>
+          <td th:text="${top.count}"></td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</div>
+<form>
+  <input type="button" value="Go back!" onclick="history.back()">
+</form>
+</body>
+</html>
