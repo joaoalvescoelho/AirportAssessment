@@ -21,10 +21,10 @@ public class CountryController {
     SearchCountry searchResult = service.searchCountry(name);
     if (searchResult.getCountry().isPresent()) {
       model.addAttribute("country", searchResult.getCountry().get());
-    } else {
+    } /*else {
       FuzzySearch fuzzySearch = service.searchCountryByFuzzy(name);
       model.addAttribute("fuzzyCountry", searchResult);
-    }
+    }*/
     return "countries";
   }
 
