@@ -1,5 +1,6 @@
 package com.example.airportassessment.Repositories;
 
+import com.example.airportassessment.Models.Airport;
 import com.example.airportassessment.Models.Country;
 import com.example.airportassessment.Reporting.AirportNameCount;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +17,7 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
   @Query(
       value = "SELECT name FROM countries c WHERE levenshtein(c.name, ?1) < ?2",
       nativeQuery = true)
-  List<String> findByFuzzyName(String name, int likeliness);
+  List<Airport> findByFuzzyName(String name, int likeliness);
 
   @Query(
       value = "SELECT c.name as name, count(*) as count " +

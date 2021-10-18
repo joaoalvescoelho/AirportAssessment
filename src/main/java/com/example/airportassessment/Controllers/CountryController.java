@@ -1,5 +1,6 @@
 package com.example.airportassessment.Controllers;
 
+import com.example.airportassessment.Reporting.FuzzySearch;
 import com.example.airportassessment.Reporting.HighestAirports;
 import com.example.airportassessment.Reporting.SearchCountry;
 import com.example.airportassessment.Services.CountryService;
@@ -21,7 +22,8 @@ public class CountryController {
     if (searchResult.getCountry().isPresent()) {
       model.addAttribute("country", searchResult.getCountry().get());
     } else {
-      model.addAttribute("suggestions", searchResult.getFuzzySuggestion());
+      FuzzySearch fuzzySearch = service.searchCountryByFuzzy(name);
+      model.addAttribute("fuzzyCountry", searchResult);
     }
     return "countries";
   }

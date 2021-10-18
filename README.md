@@ -25,13 +25,14 @@ Bonus: Support retrieving the information given a partial/fuzzy country code/nam
 ## Database
 Used mysql as DB, you can find the db script under /db/airportchallenge.sql to build the db;
 
-
 ## Services
 This application is build to meet the following cases:
-1) List all airports for given country or code<
+1) List all airports for given country or code
 2) Countries having highest number of airports
 
 ## How to run
-You can run the application by launching the springboot. To build the application you need Maven and Java8. 
-After few seconds the application should be availabe, for example http://localhost:8080/index returns the index page from where you can access two other pages.
-
+You can run the application by launching the springboot.
+After, the application should be available.
+http://localhost:8080/index.html returns the index page from where you can access two other pages.
+http://localhost:8080/country returns the page to search for airports in different countries.
+http://localhost:8080/airport returns the page with the list of top 10 countries with most airports.
